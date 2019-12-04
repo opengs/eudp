@@ -44,7 +44,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Test.cs" />
     <Compile Include="Nodes\EventCommunicationTest.cs" />
     <Compile Include="Nodes\EventQueueCommunicationTest.cs" />
   </ItemGroup>
