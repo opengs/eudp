@@ -3,6 +3,11 @@ using System.Net;
 using System.Net.Sockets;
 
 namespace EUDP.Chanels.Nodes.Network{
+
+    /// <summary>
+    /// Outputs to and receives from topology raw byte data. 
+    /// Assotiates itself with specific connection.
+    /// </summary>
     public class Raw: INode<ArraySegment<byte>, ArraySegment<byte>>{
         readonly NetworkTopology topology;
         readonly Connection connection;
