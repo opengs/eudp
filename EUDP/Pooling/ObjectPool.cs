@@ -10,8 +10,6 @@ namespace EUDP.Pooling{
             pool = new ConcurrentBag<T>();
             this.maxSize = maxSize;
         }
-    
-
 
         public T Accuire() {
             T obj;

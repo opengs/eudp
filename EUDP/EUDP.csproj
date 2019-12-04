@@ -46,8 +46,11 @@
     <Compile Include="Chanels\Nodes\IOperateAble.cs" />
     <Compile Include="Chanels\Nodes\ICloseAble.cs" />
     <Compile Include="Chanels\Nodes\Network\Raw.cs" />
-    <Compile Include="Chanels\Nodes\Network\Balancing\Balancer.cs" />
     <Compile Include="Chanels\Nodes\Converting\Converter.cs" />
+    <Compile Include="Chanels\Nodes\Converting\FormatterConverter.cs" />
+    <Compile Include="Pooling\ObjectPool.cs" />
+    <Compile Include="Pooling\ByteBufferPool.cs" />
+    <Compile Include="Pooling\GenericObjectPool.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Chanels\" />
@@ -55,8 +58,8 @@
     <Folder Include="Chanels\Nodes\Communication\" />
     <Folder Include="Chanels\Nodes\Special\" />
     <Folder Include="Chanels\Nodes\Network\" />
-    <Folder Include="Chanels\Nodes\Network\Balancing\" />
     <Folder Include="Chanels\Nodes\Converting\" />
+    <Folder Include="Pooling\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
