@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{04D56B40-6033-4F8D-A336-E82B75DCFD18}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>EUDP</RootNamespace>
+    <AssemblyName>EUDP</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExternalConsole>true</ExternalConsole>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExternalConsole>true</ExternalConsole>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Connection.cs" />
+    <Compile Include="Chanels\Chanel.cs" />
+    <Compile Include="NetworkTopology.cs" />
+    <Compile Include="Chanels\Nodes\INode.cs" />
+    <Compile Include="Chanels\Nodes\INodeReceiver.cs" />
+    <Compile Include="Chanels\Nodes\INodeSender.cs" />
+    <Compile Include="Chanels\Nodes\Communication\EventCommunication.cs" />
+    <Compile Include="Chanels\Nodes\Communication\EventQueueCommunication.cs" />
+    <Compile Include="Chanels\Nodes\Special\Void.cs" />
+    <Compile Include="Chanels\Nodes\IOperateAble.cs" />
+    <Compile Include="Chanels\Nodes\ICloseAble.cs" />
+    <Compile Include="Chanels\Nodes\Network\Raw.cs" />
+    <Compile Include="Chanels\Nodes\Network\Balancing\Balancer.cs" />
+    <Compile Include="Chanels\Nodes\Converting\Converter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Chanels\" />
+    <Folder Include="Chanels\Nodes\" />
+    <Folder Include="Chanels\Nodes\Communication\" />
+    <Folder Include="Chanels\Nodes\Special\" />
+    <Folder Include="Chanels\Nodes\Network\" />
+    <Folder Include="Chanels\Nodes\Network\Balancing\" />
+    <Folder Include="Chanels\Nodes\Converting\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
