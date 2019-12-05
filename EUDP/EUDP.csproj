@@ -51,6 +51,8 @@
     <Compile Include="Pooling\ObjectPool.cs" />
     <Compile Include="Pooling\ByteBufferPool.cs" />
     <Compile Include="Pooling\GenericObjectPool.cs" />
+    <Compile Include="Chanels\Nodes\Batching\Batcher.cs" />
+    <Compile Include="Chanels\Nodes\Batching\BlockBatcher.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Chanels\" />
@@ -60,6 +62,7 @@
     <Folder Include="Chanels\Nodes\Network\" />
     <Folder Include="Chanels\Nodes\Converting\" />
     <Folder Include="Pooling\" />
+    <Folder Include="Chanels\Nodes\Batching\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

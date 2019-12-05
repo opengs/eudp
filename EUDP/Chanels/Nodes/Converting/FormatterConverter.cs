@@ -21,7 +21,8 @@ namespace EUDP.Chanels.Nodes.Converting{
         /// <summary>
         /// Initializes a new instance of the <see cref="T:EUDP.Chanels.Nodes.Converting.FormatterConverter`1"/> class.
         /// </summary>
-        /// <param name="headerSize">Offset of the ArraySegment. Space for future protocol headres.</param>
+        /// <param name="formatter">Formatter used to format data.</param>
+        /// <param name="headerSize">Offset of the ArraySegment. Space for future protocol headers.</param>
         /// <param name="buffersPool">Pool used to accuire and release segments.</param>
         public FormatterConverter(IFormatter formatter, int headerSize, ByteBufferPool buffersPool){
             this.formatter = formatter;
@@ -43,19 +44,18 @@ namespace EUDP.Chanels.Nodes.Converting{
 
         protected override R ConvertBackward(ArraySegment<byte> data){
             backwardStream.Write(data.Array, data.Offset, data.Count);
-            if(data.Array.Length == buffersPool.SegmentSize)
-                buffersPool.Release(data);
+            buffersPool.Release(data);
             return (R)formatter.Deserialize(backwardStream);
         }
 
         protected override ArraySegment<byte> ConvertForward(R data){
             formatter.Serialize(forwardStream, data);
-            ArraySegment<byte> serializedData;
 
-            if(buffersPool.SegmentSize <= (int)forwardStream.Length + headerSize)
-                serializedData = new ArraySegment<byte>(buffersPool.Accuire().Array, headerSize, (int)forwardStream.Length);
-            else
-                serializedData = new ArraySegment<byte>(new byte[headerSize + forwardStream.Length], headerSize, (int)forwardStream.Length);
+            var serializedData = new ArraySegment<byte>(
+                buffersPool.Accuire(headerSize + (int)forwardStream.Length).Array,
+                headerSize, 
+                (int)forwardStream.Length);
+
 
             forwardStream.Read(serializedData.Array, headerSize, (int)forwardStream.Length);
             return serializedData;

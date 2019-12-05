@@ -11,13 +11,13 @@ namespace EUDP.Pooling{
             this.maxSize = maxSize;
         }
 
-        public T Accuire() {
+        public virtual T Accuire() {
             T obj;
             if (pool.TryTake(out obj)) return obj;
             return CreateNew();
         }
 
-        public void Release(T obj){
+        public virtual void Release(T obj){
             if(pool.Count < maxSize)
                 pool.Add(Clear(obj));
         }

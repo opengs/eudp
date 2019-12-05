@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Nodes\" />
+    <Folder Include="Pooling\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EUDP\EUDP.csproj">
