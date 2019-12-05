@@ -13,7 +13,7 @@ namespace EUDP.Pooling{
         }
 
         public ArraySegment<byte> Accuire(int size){
-            if (size <= SegmentSize) return Accuire();
+            if (size <= SegmentSize) return new ArraySegment<byte>(Accuire().Array, 0, size);
             return new ArraySegment<byte>(new byte[size], 0, size);
         }
 
