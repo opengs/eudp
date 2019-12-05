@@ -1,7 +1,8 @@
 ﻿using NUnit.Framework;
 using EUDP.Chanels.Nodes.Communication;
 using EUDP.Chanels.Nodes;
-namespace EUDP.Tests
+
+namespace EUDP.Tests.Unit.Nodes
 {
     [TestFixture]
     public class EventQueueCommunicationTest

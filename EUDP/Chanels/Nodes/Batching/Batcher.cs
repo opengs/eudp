@@ -25,6 +25,7 @@ namespace EUDP.Chanels.Nodes.Batching{
 
             batchTimer = new Timer(timeout);
             batchTimer.Elapsed += (x,y)=>BatchWaitTimeout();
+            batchTimer.Start();
         }
 
         [MethodImpl(MethodImplOptions.Synchronized)]

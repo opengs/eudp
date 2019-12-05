@@ -4,8 +4,10 @@ using EUDP.Pooling;
 
 namespace EUDP.Chanels.Nodes.Batching{
     /// <summary>
-    /// Groups incomming messages in blocks(chunks) of specified size. If it is possible, <see cref="BlockBatcher"/> will forward block immediately.
-    /// Uncompleted block (with smaller size then chunkSize) will be forwarded after timeout.
+    /// Groups incomming messages in blocks(chunks) of specified size. 
+    /// If this block is big enought and <see cref="BlockBatcher"/> cant add next message to the buffer,
+    /// <see cref="BlockBatcher"/> will forward block immediately. So in most cases, outgoing blocks will be smaller then assigned chunkSize.
+    /// After timeout time blok will be forwarded even if it is small.
     /// Messages order persists.
     /// </summary>
     public class BlockBatcher : Batcher{

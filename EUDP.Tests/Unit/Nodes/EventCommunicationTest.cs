@@ -3,7 +3,7 @@ using EUDP.Chanels.Nodes.Communication;
 using EUDP.Chanels.Nodes;
 using Moq;
 
-namespace EUDP.Tests
+namespace EUDP.Tests.Unit.Nodes
 {
     [TestFixture]
     public class EventCommunicationTest{

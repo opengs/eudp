@@ -44,15 +44,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Nodes\EventCommunicationTest.cs" />
-    <Compile Include="Nodes\EventQueueCommunicationTest.cs" />
+    <Compile Include="Unit\Nodes\EventCommunicationTest.cs" />
+    <Compile Include="Unit\Nodes\EventQueueCommunicationTest.cs" />
+    <Compile Include="Unit\Pooling\GenericObjectPoolTest.cs" />
+    <Compile Include="Unit\Pooling\ByteBufferPoolTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Nodes\" />
-    <Folder Include="Pooling\" />
+    <Folder Include="Unit\" />
+    <Folder Include="Unit\Nodes\" />
+    <Folder Include="Unit\Pooling\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EUDP\EUDP.csproj">
