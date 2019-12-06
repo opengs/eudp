@@ -48,6 +48,7 @@
     <Compile Include="Unit\Nodes\EventQueueCommunicationTest.cs" />
     <Compile Include="Unit\Pooling\GenericObjectPoolTest.cs" />
     <Compile Include="Unit\Pooling\ByteBufferPoolTest.cs" />
+    <Compile Include="Unit\Nodes\Batching\BlockBatcherTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -56,6 +57,7 @@
     <Folder Include="Unit\" />
     <Folder Include="Unit\Nodes\" />
     <Folder Include="Unit\Pooling\" />
+    <Folder Include="Unit\Nodes\Batching\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EUDP\EUDP.csproj">
